@@ -89,6 +89,8 @@ Check if it’s running:
 ```bash
 qstat
 ```
+<img width="774" height="186" alt="image" src="https://github.com/user-attachments/assets/8afc7952-f269-437c-ae43-25e30fff53fe" />
+
 ## 📋 Useful PBS Commands
 
 * qstat -Qf → Show all queue details
@@ -107,9 +109,11 @@ qstat -f <job_id> | grep exec_host
 Example:
 
 ```bash
-qstat -f 5701.head1 | grep exec_host
+qstat -f 5950.head1 | grep exec_host
 ```
 You’ll see something like exec_host = gpu08/..., meaning the model is running on gpu08.
+<img width="921" height="128" alt="image" src="https://github.com/user-attachments/assets/5e68c58f-a9a4-445b-af02-bb5de6c56ec9" />
+
 
 ## ✅ Test the Model Inside the HPC Cluster
 
