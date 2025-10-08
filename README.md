@@ -19,6 +19,7 @@ These tools are required to connect to the HPC environment and manage sessions.
 
 > **Note:** The environment and model directories already exist — no need to recreate them.  
 > Just activate and use the existing setup if available.
+> ⚠️ Important: Please do not run any code directly on the login node — all code must be executed through PBS job scripts.
 
 Create and activate the environment (if not already created):
 
