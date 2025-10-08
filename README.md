@@ -26,13 +26,15 @@ Create and activate the environment (if not already created):
 conda create --name gptoss-vllm python=3.10
 conda activate gptoss-vllm
 ```
+
 ## 2️⃣ Prepare the Model Directory
 
 ```bash
 mkdir models
 cd models
+```
 
-Go to your model directory (repository name) and copy it there.
+copy the repository name of the model .
 <img width="763" height="439" alt="image" src="https://github.com/user-attachments/assets/1dcd2a64-d1a8-44b0-b370-81c54c273818" />
 
 
@@ -40,14 +42,14 @@ Download the model from Hugging Face:
 
 ```bash
 huggingface-cli download gaunernst/gemma27b-it-int4-awq --local-dir ./gemma27b-it-int4-awq
-
+```
 ## 3️⃣ Create the PBS Job Script
 
 Prepare a directory to store your logs:
 
 ```bash
 mkdir logs
-
+```
 Save the following as run_model_1.pbs:
 
 ```bash
@@ -73,7 +75,7 @@ echo "==== Job running on node: $(hostname -s) ===="
 vllm serve /home/skiredj.abderrahman/models/gemma27b-it-int4-awq \
   --tensor-parallel-size 1 \
   --port 9998
-
+```
 
 ## 4️⃣ Submit the Job
 
@@ -81,12 +83,12 @@ Submit the PBS job:
 
 ```bash
 qsub run_model_1.pbs
-
+```
 Check if it’s running:
 
 ```bash
 qstat
-
+```
 ## 📋 Useful PBS Commands
 
 * qstat -Qf → Show all queue details
@@ -101,12 +103,12 @@ Once the job is running, check which node it’s on:
 
 ```bash
 qstat -f <job_id> | grep exec_host
-
+```
 Example:
 
 ```bash
 qstat -f 5701.head1 | grep exec_host
-
+```
 You’ll see something like exec_host = gpu08/..., meaning the model is running on gpu08.
 
 ## ✅ Test the Model Inside the HPC Cluster
@@ -115,14 +117,14 @@ Execute this command on the login node (replace gpu08 with your actual node):
 
 ```bash
 curl http://gpu08:9998/v1/completions -H "Content-Type: application/json" -d '{"model":"/home/skiredj.abderrahman/models/gemma27b-it-int4-awq","prompt":"hi how are u","max_tokens":50}'
-
+```
 ## 🌐 Accessing the Model Locally (SSH Tunneling)
 
-To access the API from your local machine, create an SSH tunnel to the GPU node:
+To access the model from your local machine, create an SSH tunnel to the GPU node:
 
 ```bash
 ssh -N -L 127.0.0.1:9998:gpu08:9998 skiredj.abderrahman@172.30.30.11
-
+```
 Enter your HPC password when prompted.
 Keep this terminal open while the tunnel is active.
 
@@ -132,7 +134,7 @@ Open a new CMD window and run:
 
 ```bash
 curl -X POST http://localhost:9998/v1/completions -H "Content-Type: application/json" -d "{\"model\":\"/home/skiredj.abderrahman/models/gemma27b-it-int4-awq\",\"prompt\":\"do u have a wish\",\"max_tokens\":50}"
-
+```
 If the setup is correct, you’ll receive a JSON response containing the model’s output.
 
 
