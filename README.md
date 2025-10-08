@@ -25,7 +25,7 @@ Create and activate the environment (if not already created):
 ```bash
 conda create --name gptoss-vllm python=3.10
 conda activate gptoss-vllm
-
+```
 ## 2️⃣ Prepare the Model Directory
 
 ```bash
