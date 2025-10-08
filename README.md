@@ -50,7 +50,15 @@ Prepare a directory to store your logs:
 ```bash
 mkdir logs
 ```
-Save the following as run_model_1.pbs:
+
+create pbs script file :
+
+```bash
+nano run_model_1.pbs
+```
+
+
+past the following :
 
 ```bash
 #!/bin/bash
@@ -76,6 +84,10 @@ vllm serve /home/skiredj.abderrahman/models/gemma27b-it-int4-awq \
   --tensor-parallel-size 1 \
   --port 9998
 ```
+save :
+Ctrl +x 
+Y
+Enter 
 
 ## 4️⃣ Submit the Job
 
