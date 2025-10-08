@@ -118,6 +118,10 @@ Execute this command on the login node (replace gpu08 with your actual node):
 ```bash
 curl http://gpu08:9998/v1/completions -H "Content-Type: application/json" -d '{"model":"/home/skiredj.abderrahman/models/gemma27b-it-int4-awq","prompt":"hi how are u","max_tokens":50}'
 ```
+example of output : 
+
+<img width="1653" height="146" alt="image" src="https://github.com/user-attachments/assets/f21df5e2-50a9-4235-8677-9c3a34ba0234" />
+
 ## 🌐 Accessing the Model Locally (SSH Tunneling)
 
 To access the model from your local machine, create an SSH tunnel to the GPU node:
