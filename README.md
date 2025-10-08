@@ -17,9 +17,9 @@ These tools are required to connect to the HPC environment and manage sessions.
 
 ## 1️⃣ Setup Conda Environment
 
-> **Note:** The environment and model directories already exist — no need to recreate them.  
+- **Note:** The environment and model directories already exist — no need to recreate them.  
 > Just activate and use the existing setup if available.
-> ⚠️ Important: Please do not run any code directly on the login node — all code must be executed through PBS job scripts.
+-  ⚠️ Important: Please do not run any code directly on the login node — all code must be executed through PBS job scripts.
 
 Create and activate the environment (if not already created):
 
@@ -106,11 +106,11 @@ qstat
 
 ## 📋 Useful PBS Commands
 
-* qstat -Qf → Show all queue details
+- qstat -Qf → Show all queue details
 
-* qstat -f <job_id> → Show detailed info for a specific job
+- qstat -f <job_id> → Show detailed info for a specific job
 
-* pbsnodes -a → List all nodes and see where your model is running
+- pbsnodes -a → List all nodes and see where your model is running
 
 ## 🔍 Verifying the Deployment
 
