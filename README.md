@@ -132,6 +132,9 @@ ssh -N -L 127.0.0.1:9998:gpu08:9998 skiredj.abderrahman@172.30.30.11
 Enter your HPC password when prompted.
 Keep this terminal open while the tunnel is active.
 
+<img width="1071" height="401" alt="image" src="https://github.com/user-attachments/assets/6c6c4b83-9076-4578-ab16-2bf4c780f7c7" />
+
+
 ## 💬 Test a Prompt Locally
 
 Open a new CMD window and run:
@@ -140,6 +143,8 @@ Open a new CMD window and run:
 curl -X POST http://localhost:9998/v1/completions -H "Content-Type: application/json" -d "{\"model\":\"/home/skiredj.abderrahman/models/gemma27b-it-int4-awq\",\"prompt\":\"do u have a wish\",\"max_tokens\":50}"
 ```
 If the setup is correct, you’ll receive a JSON response containing the model’s output.
+<img width="1092" height="632" alt="image" src="https://github.com/user-attachments/assets/53852d1d-3b20-474c-a5a5-2191e13569f9" />
+
 
 
 
