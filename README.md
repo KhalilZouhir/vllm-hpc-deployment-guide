@@ -17,7 +17,7 @@ These tools are required to connect to the HPC environment and manage sessions.
 
 ## 1️⃣ Setup Conda Environment
 
-> - **Note:** The environment and model directories already exist — no need to recreate them.  
+> - **Note:** The virtuel environment  already exist — no need to recreate it.  
 > Just activate and use the existing setup if available.
 > -  ⚠️ Important: Please do not run any code directly on the login node — all code must be executed through PBS job scripts.
 
@@ -31,8 +31,8 @@ conda activate gptoss-vllm
 ## 2️⃣ Prepare the Model Directory
 
 ```bash
-mkdir models
-cd models
+mkdir Radnom_Directory_Name 
+cd Radnom_Directory_Name
 ```
 
 copy the repository name of the model .
