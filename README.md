@@ -81,7 +81,7 @@ cd /home/skiredj.abderrahman/models
 echo "==== Job running on node: $(hostname -s) ===="
 
 # === Start vLLM server ===
-vllm serve /home/skiredj.abderrahman/models/gemma27b-it-int4-awq \
+vllm serve /home/skiredj.abderrahman/Radnom_Directory_Name/gemma27b-it-int4-awq \
   --tensor-parallel-size 1 \
   --port 9998
 ```
