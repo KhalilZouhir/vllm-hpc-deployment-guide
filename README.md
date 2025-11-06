@@ -17,15 +17,13 @@ These tools are required to connect to the HPC environment and manage sessions.
 
 ## 1️⃣ Setup Conda Environment
 
-> - **Note:** The virtuel environment  already exist — no need to recreate it.  
-> Just activate and use the existing setup if available.
 > -  ⚠️ Important: Please do not run any code directly on the login node — all code must be executed through PBS job scripts.
 
 Create and activate the environment (if not already created):
 
 ```bash
-conda create --name gptoss-vllm python=3.10
-conda activate gptoss-vllm
+conda create --name UR_OWN_VENV python=3.10
+conda activate UR_OWN_VENV
 ```
 
 ## 2️⃣ Prepare the Model Directory
@@ -72,10 +70,10 @@ past the following :
 # === Load modules & activate conda ===
 module use /app/common/modules
 module load anaconda3-2024.10
-source activate gptoss-vllm
+source activate UR_OWN_VENV
 
 # === Move to working directory ===
-cd /home/skiredj.abderrahman/models
+cd /home/skiredj.abderrahman/Radnom_Directory_Name
 
 # === Confirm node ===
 echo "==== Job running on node: $(hostname -s) ===="
